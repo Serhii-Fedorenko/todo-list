@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import AppBar from "./Components/AppBar/AppBar";
 import TaskList from "./Components/TaskList/TaskList";
 import { fetchTasks } from "./redux/operations";
 
@@ -12,6 +13,7 @@ const App = () => {
   
   return (
     <div>
+      <AppBar />
       <TaskList />
     </div>
   );
