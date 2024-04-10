@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
+import { selectTasks } from "../../redux/selectors";
 
 const AppBar = () => {
-  const tasks = useSelector((state) => state.tasks.items);
+  const tasks = useSelector(selectTasks);
 
   const count = tasks.reduce(
     (acc, task) => {
