@@ -27,10 +27,6 @@ const TaskList = () => {
       }
     };
 
-//   const getVisibleTasks = () => {
-//     return tasks.filter((task) => !task.completed);
-//   };
-
   return (
     <ul>
       {tasks &&
