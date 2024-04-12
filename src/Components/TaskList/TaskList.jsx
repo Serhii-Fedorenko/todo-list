@@ -19,7 +19,14 @@ const TaskList = () => {
   };
 
   return (
-    <ul>{tasks && getVisibleTasks().map((task) => <Task task={task} />)}</ul>
+    <ul>
+      {tasks &&
+        getVisibleTasks().map((task) => (
+          <li key={task.id}>
+            <Task task={task} />
+          </li>
+        ))}
+    </ul>
   );
 };
 

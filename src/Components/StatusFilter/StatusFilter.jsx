@@ -1,10 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { statusFilters } from "../../redux/constants";
 import { setStatusFilter } from "../../redux/filtersSlice";
 import Button from "@mui/material/Button";
+import { selectFilters } from "../../redux/selectors";
 
 const StatusFilter = ({ tasks }) => {
   const dispatch = useDispatch();
+  const currentFilter = useSelector(selectFilters)
+
   const handleFilterChange = (filter) => dispatch(setStatusFilter(filter));
 
   return (
@@ -13,7 +16,7 @@ const StatusFilter = ({ tasks }) => {
       <div>
         <Button
           variant="outlined"
-          color="white"
+          color={currentFilter === statusFilters.all ? 'error' : 'white'}
           type="button"
           onClick={() => handleFilterChange(statusFilters.all)}
         >
@@ -21,7 +24,7 @@ const StatusFilter = ({ tasks }) => {
         </Button>
         <Button
           variant="outlined"
-          color="white"
+          color={currentFilter === statusFilters.active ? 'error' : 'white'}
           type="button"
           onClick={() => handleFilterChange(statusFilters.active)}
         >
@@ -29,7 +32,7 @@ const StatusFilter = ({ tasks }) => {
         </Button>
         <Button
           variant="outlined"
-          color="white"
+          color={currentFilter === statusFilters.completed ? 'error' : 'white'}
           type="button"
           onClick={() => handleFilterChange(statusFilters.completed)}
         >
