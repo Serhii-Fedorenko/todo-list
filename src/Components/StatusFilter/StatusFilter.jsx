@@ -3,7 +3,6 @@ import { statusFilters } from "../../redux/constants";
 import { setStatusFilter } from "../../redux/filtersSlice";
 import Button from "@mui/material/Button";
 
-
 const StatusFilter = ({ tasks }) => {
   const dispatch = useDispatch();
   const handleFilterChange = (filter) => dispatch(setStatusFilter(filter));
@@ -12,24 +11,30 @@ const StatusFilter = ({ tasks }) => {
     <section>
       <h2>Filter by status</h2>
       <div>
-        <button
+        <Button
+          variant="outlined"
+          color="white"
           type="button"
           onClick={() => handleFilterChange(statusFilters.all)}
         >
           All
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="outlined"
+          color="white"
           type="button"
           onClick={() => handleFilterChange(statusFilters.active)}
         >
           Active
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="outlined"
+          color="white"
           type="button"
           onClick={() => handleFilterChange(statusFilters.completed)}
         >
           Completed
-        </button>
+        </Button>
       </div>
     </section>
   );
