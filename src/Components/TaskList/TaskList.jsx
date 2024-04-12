@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { statusFilters } from "../../redux/constants";
 import { selectFilters, selectTasks } from "../../redux/selectors";
 import Task from "../Task/Task";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 
 const TaskList = () => {
   const tasks = useSelector(selectTasks);
@@ -19,14 +21,14 @@ const TaskList = () => {
   };
 
   return (
-    <ul>
+    <List sx={{ width: "100%", maxWidth: 360 }}>
       {tasks &&
         getVisibleTasks().map((task) => (
-          <li key={task.id}>
+          <ListItem key={task.id} sx={{ borderBottom: "1px solid" }}>
             <Task task={task} />
-          </li>
+          </ListItem>
         ))}
-    </ul>
+    </List>
   );
 };
 
