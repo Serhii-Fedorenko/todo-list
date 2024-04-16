@@ -15,25 +15,26 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <Grid container spacing={1} alignItems="center" marginTop='20px'>
-        <Grid item xs={2}>
-          <TextField
-            id="outlined-basic"
-            label="Enter task text..."
-            variant="outlined"
-            size="small"
-            type="text"
-            name="text"
-          />
+      <form onSubmit={handleFormSubmit}>
+        <Grid container spacing={2} alignItems="center" justifyContent='center' mt='20px'>
+          <Grid item xs={4}>
+            <TextField
+              sx={{ width: "100%" }}
+              id="outlined-basic"
+              label="Enter task text..."
+              variant="outlined"
+              size="small"
+              type="text"
+              name="text"
+            />
+          </Grid>
+          <Grid item>
+            <Button type="submit" variant="outlined">
+              Add task
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={8}>
-          <Button type="submit" variant="outlined" >
-            Add task
-          </Button>
-        </Grid>
-      </Grid>
-    </form>
+      </form>
   );
 };
 
