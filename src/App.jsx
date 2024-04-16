@@ -5,12 +5,12 @@ import AppBar from "./Components/AppBar/AppBar";
 import TaskForm from "./Components/TaskForm/TaskForm";
 import TaskList from "./Components/TaskList/TaskList";
 import { fetchTasks } from "./redux/operations";
+import { teal, lime } from '@mui/material/colors';
 
 const theme = createTheme({
   palette: {
-    white: {
-      main: "#FFFFFF",
-    },
+    primary: teal,
+    secondary: lime
   },
 });
 
