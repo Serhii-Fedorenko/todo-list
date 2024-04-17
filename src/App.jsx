@@ -17,22 +17,24 @@ const theme = createTheme({
 
 const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading)
-  const error = useSelector(selectError)
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchTasks());
   }, [dispatch]);
 
+  // TODO Стилізувати індикатор завантаження
+
   return (
-    <div>
+    <>
       <ThemeProvider theme={theme}>
         <AppBar />
         <TaskForm />
         {isLoading && !error && <b>Request in progress...</b>}
         <TaskList />
       </ThemeProvider>
-    </div>
+    </>
   );
 };
 

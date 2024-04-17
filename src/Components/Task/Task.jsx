@@ -1,7 +1,5 @@
 import { useDispatch } from "react-redux";
 import { deleteTask, toggleCompleted } from "../../redux/operations";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
@@ -27,7 +25,7 @@ const Task = ({ task }) => {
       <ListItemText>{task.text}</ListItemText>
       <IconButton
         edge="end"
-        aria-label="comments"
+        aria-label="delete"
         onClick={() => handleDeleteTask(task.id)}
       >
         <DeleteIcon />

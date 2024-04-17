@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { statusFilters } from "../../redux/constants";
 import { setStatusFilter } from "../../redux/filtersSlice";
-import Button from "@mui/material/Button";
 import { selectFilters } from "../../redux/selectors";
+import Button from "@mui/material/Button";
 
 const StatusFilter = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const StatusFilter = () => {
   return (
     <section>
       <h2>Filter by status</h2>
-      <div>
+      <>
         <Button
           variant="contained"
           color={currentFilter === statusFilters.all ? "secondary" : "primary"}
@@ -41,7 +41,7 @@ const StatusFilter = () => {
         >
           Completed
         </Button>
-      </div>
+      </>
     </section>
   );
 };
