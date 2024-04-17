@@ -1,15 +1,9 @@
-const TaskCounter = ({tasks}) => {
-  const count = tasks.reduce(
-    (acc, task) => {
-      if (task.completed) {
-        acc.completed += 1;
-      } else {
-        acc.active += 1;
-      }
-      return acc;
-    },
-    { active: 0, completed: 0 }
-  );
+import { useSelector } from "react-redux";
+import { selectTasksCount } from "../../redux/selectors";
+
+const TaskCounter = () => {
+  const count = useSelector(selectTasksCount);
+
   return (
     <section>
       <div>

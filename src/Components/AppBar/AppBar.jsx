@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { selectTasks } from "../../redux/selectors";
 import StatusFilter from "../StatusFilter/StatusFilter";
 import TaskCounter from "../TaskCounter/TaskCounter";
 import MuiAppBar from "@mui/material/AppBar";
@@ -8,7 +6,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 const AppBar = () => {
-  const tasks = useSelector(selectTasks);
 
   return (
     <header>
@@ -16,9 +13,9 @@ const AppBar = () => {
         <MuiAppBar position="static">
           <Toolbar>
             <Typography variant="h8" component="h4" sx={{ flexGrow: 1 }}>
-              <TaskCounter tasks={tasks} />
+              <TaskCounter />
             </Typography>
-            <StatusFilter tasks={tasks} />
+            <StatusFilter />
           </Toolbar>
         </MuiAppBar>
       </Box>

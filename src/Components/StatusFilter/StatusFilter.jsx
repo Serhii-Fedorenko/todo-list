@@ -4,7 +4,7 @@ import { setStatusFilter } from "../../redux/filtersSlice";
 import Button from "@mui/material/Button";
 import { selectFilters } from "../../redux/selectors";
 
-const StatusFilter = ({ tasks }) => {
+const StatusFilter = () => {
   const dispatch = useDispatch();
   const currentFilter = useSelector(selectFilters);
 
