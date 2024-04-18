@@ -4,9 +4,13 @@ import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useSelector } from "react-redux";
+import { selectError, selectIsLoading } from "../../redux/selectors";
 
 const AppBar = () => {
-// ! Переглянути всі атрибути компонентів
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+  // ! Переглянути всі атрибути компонентів
 
   return (
     <header>
@@ -15,6 +19,9 @@ const AppBar = () => {
           <Toolbar>
             <Typography variant="h8" component="h4" sx={{ flexGrow: 1 }}>
               <TaskCounter />
+            </Typography>
+            <Typography variant="h8" component="h4" sx={{ flexGrow: 1 }}>
+              {isLoading && !error && <b>Request in progress...</b>}
             </Typography>
             <StatusFilter />
           </Toolbar>
