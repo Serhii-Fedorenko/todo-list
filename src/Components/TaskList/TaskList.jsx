@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 const TaskList = () => {
   const tasks = useSelector(selectVisibleTasks);
   return (
-    <Box display="flex" alignItems="center" justifyContent="center">
+    <Box display="flex" alignItems="center" justifyContent="center" mt='250px'>
       <List sx={{ width: "100%", maxWidth: 360 }}>
         {tasks &&
           tasks.map((task) => (

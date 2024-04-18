@@ -15,7 +15,7 @@ const AppBar = () => {
   return (
     <header>
       <Box sx={{ flexGrow: 1 }}>
-        <MuiAppBar position="static">
+        <MuiAppBar position="fixed">
           <Toolbar>
             <Typography variant="h8" component="h4" sx={{ flexGrow: 1 }}>
               <TaskCounter />
