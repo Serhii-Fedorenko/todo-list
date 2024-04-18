@@ -1,3 +1,4 @@
+import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectTasksCount } from "../../redux/selectors";
 
@@ -6,9 +7,17 @@ const TaskCounter = () => {
 
   return (
     <section>
-      <h2>Tasks</h2>
-      <p>Active: {count.active}</p>
-      <p>Completed: {count.completed}</p>
+      <Typography variant="h4" component="h3">
+        Tasks
+      </Typography>
+      <Grid container>
+        <Typography variant="h7" component="p">
+          Active: {count.active}
+        </Typography>
+        <Typography variant="h7" component="p" ml="20px">
+          Completed: {count.completed}
+        </Typography>
+      </Grid>
     </section>
   );
 };

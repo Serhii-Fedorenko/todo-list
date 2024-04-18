@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { statusFilters } from "../../redux/constants";
 import { setStatusFilter } from "../../redux/filtersSlice";
 import { selectFilters } from "../../redux/selectors";
-import Button from "@mui/material/Button";
+import { Button, Typography } from "@mui/material";
 
 const StatusFilter = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const StatusFilter = () => {
 
   return (
     <section>
-      <h2>Filter by status</h2>
+      <Typography variant="h5" component="h4">Filter by status</Typography>
       <>
         <Button
           variant="contained"
@@ -25,13 +25,16 @@ const StatusFilter = () => {
         <Button
           sx={{ ml: "5px" }}
           variant="contained"
-          color={currentFilter === statusFilters.active ? "secondary" : "primary"}
+          color={
+            currentFilter === statusFilters.active ? "secondary" : "primary"
+          }
           type="button"
           onClick={() => handleFilterChange(statusFilters.active)}
         >
           Active
         </Button>
-        <Button sx={{ml: '5px'}}
+        <Button
+          sx={{ ml: "5px" }}
           variant="contained"
           color={
             currentFilter === statusFilters.completed ? "secondary" : "primary"
