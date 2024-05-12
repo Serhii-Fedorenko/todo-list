@@ -8,7 +8,6 @@ import { selectError, selectIsLoading } from "../../redux/selectors";
 const AppBar = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-  // ! Переглянути всі атрибути компонентів
 
   return (
     <header>

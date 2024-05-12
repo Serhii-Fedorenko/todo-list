@@ -7,14 +7,14 @@ const TaskCounter = () => {
 
   return (
     <section>
-      <Typography variant="h4" component="h3">
+      <Typography fontSize={'4vmin'} component="h3">
         Tasks
       </Typography>
       <Grid container>
-        <Typography variant="h7" component="p">
+        <Typography fontSize={'2,5vmin'} component="p">
           Active: {count.active}
         </Typography>
-        <Typography variant="h7" component="p" ml="20px">
+        <Typography fontSize={'2,5vmin'} component="p" ml="20px">
           Completed: {count.completed}
         </Typography>
       </Grid>

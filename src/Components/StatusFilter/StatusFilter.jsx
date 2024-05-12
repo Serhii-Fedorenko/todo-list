@@ -12,7 +12,7 @@ const StatusFilter = () => {
 
   return (
     <section>
-      <Typography variant="h5" component="h4">Filter by status</Typography>
+      <Typography fontSize={'3vmin'} component="h4">Filter by status</Typography>
       <>
         <Button
           variant="contained"
@@ -20,7 +20,7 @@ const StatusFilter = () => {
           type="button"
           onClick={() => handleFilterChange(statusFilters.all)}
         >
-          All
+          <Typography fontSize={'2vmin'}>All</Typography>
         </Button>
         <Button
           sx={{ ml: "5px" }}
@@ -31,7 +31,7 @@ const StatusFilter = () => {
           type="button"
           onClick={() => handleFilterChange(statusFilters.active)}
         >
-          Active
+          <Typography fontSize={'2vmin'}>Active</Typography>
         </Button>
         <Button
           sx={{ ml: "5px" }}
@@ -42,7 +42,7 @@ const StatusFilter = () => {
           type="button"
           onClick={() => handleFilterChange(statusFilters.completed)}
         >
-          Completed
+          <Typography fontSize={'2vmin'}>Completed</Typography>
         </Button>
       </>
     </section>

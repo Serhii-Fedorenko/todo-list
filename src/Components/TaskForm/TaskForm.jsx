@@ -23,8 +23,8 @@ const TaskForm = () => {
         alignItems="center"
         justifyContent="center"
         top="100px"
-        p='20px'
-        sx={{backgroundColor: 'white', zIndex: '999'}}
+        p='30px'
+        sx={{backgroundColor: 'white'}}
         
       >
         <Grid item xs={4}>
