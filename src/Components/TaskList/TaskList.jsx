@@ -1,10 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectVisibleTasks } from "../../redux/selectors";
 import Task from "../Task/Task";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import Box from "@mui/material/Box";
-import { Paper } from "@mui/material";
+import { Paper, Box, ListItem, List} from "@mui/material";
 
 const TaskList = () => {
   const tasks = useSelector(selectVisibleTasks);

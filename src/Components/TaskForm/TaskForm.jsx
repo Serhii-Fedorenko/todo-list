@@ -1,8 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/operations";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import {TextField, Button, Grid} from "@mui/material";
 
 const TaskForm = () => {
   const dispatch = useDispatch();
@@ -27,9 +25,8 @@ const TaskForm = () => {
         sx={{backgroundColor: 'white'}}
         
       >
-        <Grid item xs={4}>
           <TextField
-            sx={{ width: "100%" }}
+            sx={{ maxWidth: "50%", mr: 2 }}
             id="outlined-basic"
             label="Enter task text..."
             variant="outlined"
@@ -37,12 +34,9 @@ const TaskForm = () => {
             type="text"
             name="text"
           />
-        </Grid>
-        <Grid item>
           <Button type="submit" variant="outlined">
             Add task
           </Button>
-        </Grid>
       </Grid>
     </form>
   );
