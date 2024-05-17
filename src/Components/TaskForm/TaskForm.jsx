@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/operations";
-import {TextField, Button, Grid} from "@mui/material";
+import { TextField, Button, Grid } from "@mui/material";
+import Notiflix from "notiflix";
 
 const TaskForm = () => {
   const dispatch = useDispatch();
@@ -8,7 +9,15 @@ const TaskForm = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    dispatch(addTask(form.elements.text.value));
+    const trimmedText = form.elements.text.value.trim();
+    if (trimmedText === "") {
+      Notiflix.Notify.failure(
+        "“Goals are dreams with deadlines.” ― Diana Scharf",
+        { timeout: 5000, position: "right-bottom" }
+      );
+      return;
+    }
+    dispatch(addTask(trimmedText));
     form.reset();
   };
 
@@ -21,22 +30,21 @@ const TaskForm = () => {
         alignItems="center"
         justifyContent="center"
         top="100px"
-        p='30px'
-        sx={{backgroundColor: 'white'}}
-        
+        p="30px"
+        sx={{ backgroundColor: "white" }}
       >
-          <TextField
-            sx={{ maxWidth: "50%", mr: 2 }}
-            id="outlined-basic"
-            label="Enter task text..."
-            variant="outlined"
-            size="small"
-            type="text"
-            name="text"
-          />
-          <Button type="submit" variant="outlined">
-            Add task
-          </Button>
+        <TextField
+          sx={{ maxWidth: "50%", mr: 2 }}
+          id="outlined-basic"
+          label="Enter task text..."
+          variant="outlined"
+          size="small"
+          type="text"
+          name="text"
+        />
+        <Button type="submit" variant="outlined">
+          Add task
+        </Button>
       </Grid>
     </form>
   );
