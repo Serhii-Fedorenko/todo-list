@@ -41,13 +41,13 @@ const TaskForm = () => {
     <form onSubmit={handleFormSubmit}>
       <Grid
         container
-        spacing={2}
         position="fixed"
         alignItems="center"
         justifyContent="center"
-        top="100px"
-        p="30px"
-        sx={{ backgroundColor: "white" }}
+        top="55px"
+        p="50px 20px 30px 20px"
+        m='0'
+        sx={{ backgroundColor: "white", zIndex: '999' }}
       >
         <TextField
           sx={{ maxWidth: "50%", mr: 2 }}
